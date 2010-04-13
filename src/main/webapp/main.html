@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="/jquery-ui-1.8.custom.js"></script>
+    <link type="text/css" href="/jquery-ui-1.8.custom.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+      // <![CDATA[ 
+      $(document).ready(function() {
+        $("#tabs").tabs({ajaxOptions: {
+			error: function(xhr, status, index, anchor) {
+				$(anchor.hash).html("Couldn't load this tab. We'll try to fix this as soon as possible. If this wouldn't be a demo.");
+			},
+        success: function(xhr, status, index, anchor) {
+				//$(anchor.hash).html("all is ok Couldn't load this tab. We'll try to fix this as soon as possible. If this wouldn't be a demo.");
+			}
+		}
+	});
+      });
+      // ]]> 
+    </script>
+  </head>
+  <body>
+  
+  <h2>Tab example with HTML doctype</h2>
+   <div id="tabs">
+     <ul>
+         <li><a href="#summary">summary</a></li>
+         <li><a href="tabpage.html">Html</a></li>
+         <li><a href="tabpage_ent.html">Html with entity</a></li>
+         <li><a href="tabpage.xhtml">Xhtml</a></li>
+         <li><a href="tabpage_ent.xhtml">Xhtml with entity</a></li>
+     </ul>
+     <div id="summary">
+     summary page
+     </div>
+ </div>
+ </body>
+</html>
+
